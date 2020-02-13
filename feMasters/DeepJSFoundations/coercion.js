@@ -3,6 +3,15 @@
 //Abstract Operations
 //In the Spec section 7 https://www.ecma-international.org/ecma-262/9.0/index.html#sec-abstract-operations
 
+
+const theListAbstractOperations = {
+    ToPrimitve,
+    toString,
+    toNumber,
+    toBoolean
+};
+
+
 const abstractOperations = {
     are: 'there are a few and fundamental way to do type conversion',
     typeConversion: '= coercion',
@@ -30,29 +39,37 @@ const toString = {
 
 const toNumber = {
    action: 'for when we need a numerical operation without numbers present, invoke toNumber()',
-   procedure: 'ToNumber(string) invikes the ToPrimitve(number)'
+   procedure: 'ToNumber(string) invokes the ToPrimitve(number)'
 }
 
 //examples
-// '' 0
+// ''  0
 // "0" 0
-// ","  NaN (meaning we do not have a number)
+// " 009"  9
+// "."  NaN (meaning we do not have a number)
+//"0xaf"  175
+
 // false 0
 // true 1
 // null 0
 // undefined NaN
 
 const toBoolean = {
-    action: 'for any value that is not a boolean',
-    lookUpTable: 'reutrns truthy or falsy',
+    action: 'for any value that is not a boolean but there is a need for a boolean',
+    justALookUp: 'less algorithym, reutrns truthy or falsy',
+    doesNot: 'invoke, ToPrimitive, toNumber, or toString',
+
     falsy: '0, -0, null, NaN, false, undefined',
-    truthy: 'if not falsy then truthy, string, number',
+    truthy: 'if not falsy then truthy, string, number, object, array',
     point: 'just a stright look-up, no ToPrimitive() procedure'
 }
 
+//the abstract operations lays the foundation for coercion
+
 const coercion = {
     noCoercion: 'where one is trying to avoid coercion, === would be used',
-    exampleOfCoercion: 'template strings'
+    note: 'this is not a good practice',
+    exampleOfCoercion: 'template literal strings'
 }
 
 
@@ -73,6 +90,7 @@ console.log(
 
 
 //example of turning something into a number 
+//use case is input field DOM element value is a string
 function addTacos(numTacos) {
     return numTacos + 1;
 } 
@@ -95,7 +113,8 @@ const boxing = {
     for: 'allows for the access of the .length of a string',
     does: 'coerce a primitive to an object',
     is: 'form of implcit coercion',
-    JS: 'sees the need for an object and makes the primitve into an object',
+    JS: 'sees the need for an object and makes the primitve into an object, this is good since at some point will need to access properties and methods',
+    theBenefitOf: 'since conversion/coercion so prevalent; string to number, number to boolean',
 
     noteIt: 'DOM element values are always a string',
     
@@ -105,6 +124,8 @@ const boxing = {
 if (studentNameElem.value.length > 50) {
     console.log("Name too long!");
 }
+
+
 
 coercionCornerCase = '' //returns 0
 

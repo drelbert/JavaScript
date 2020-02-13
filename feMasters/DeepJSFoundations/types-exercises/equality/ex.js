@@ -1,6 +1,43 @@
-// TODO: write `findAll(..)`
+// TODO: write `findAll(..)` utility 
+// that will return 'true' for all the console.log() statements below
 
+// this illustrates that coercion can be safe, when corner cases are controlled for
 
+function findAll(matchingAgainst, listOfValuesToPullFrom) {
+	var returnedArray = [];  // returning an array
+	for (let v of listOfValuesToPullFrom) {   // looping through all values in listOfValuesToPullFrom that match 
+		if (Object.is(matchingAgainst, v)) {  //case to check that both are definetly the same value
+			returnedArray.push(v);
+		}
+		else if  ( matchingAgainst == null && v == null ) {  // case to check for null and undefined
+			returnedArray.push(v);
+		}	
+		else if (typeof matchingAgainst == "boolean"  && typeof v == "boolean") {
+			if (match == v) {
+				returnedArray.push(v);
+			}
+		}
+		else if (typeof matchingAgainst == "string" && matchingAgainst.trim() != ""  && typeof v == "number" && !Object.is(-0, v)) {
+			if (match == v) {
+				returnedArray.push(v);
+			}
+		}
+		else if (
+			typeof matchingAgainst == "number" && 
+			!Object.is(match, -0) &&
+			!Object.is(matchingAgainst, NaN) && 
+			!Object.is(match, Infinity) &&
+			!Object.is(match, -Infinity)  && 
+			typeof v == "string" &&
+			v.trim() != ""
+			) {
+				if (match == v) {
+					returnedArray.push(v);
+				}
+			}
+	}
+	return returnedArray;
+}
 
 // tests:
 var myObj = { a: 2 };
