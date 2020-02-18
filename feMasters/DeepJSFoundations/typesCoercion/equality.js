@@ -1,4 +1,4 @@
-coercionPoint = 'often has to do with the + operator since it is loaded to implicitly coerce type to a number and this causes confusion'
+coercionPoint = 'often has to do with the + operator and note,  it is loaded to implicitly coerce type to a number and this causes confusion'
 
 +"3" //returns 3 -  typeof number
 +true //returns 1 - typeof number
@@ -28,7 +28,7 @@ equality = "== vs. ==="
 
 === "disallows coercion (types same) -> spec: if Type(x) is different from Type(y), return false"
 
-rule = "when the types match -> == and === are the same"
+rule = "when the types match -> == and === behave the same"
 
  function doNotDoThis(array, number, object, string, undefined) {
     if (number == string);
@@ -103,7 +103,7 @@ var calledTwo = [44];
     //Yes
   }
 
-summary = 'of =='
+summary ='of =='
 where = 'types are the same, === will be used'
 
 where = 'if null and undefined are present, they are equal'
@@ -119,7 +119,7 @@ doubleEqualsCornerCases
 
 cornerCasesBooleans 
 
-var workshopTools= [];
+var workshopTools = [];
 
 // do 
 if (workshopTools) {
@@ -164,3 +164,5 @@ whereTypesAreNotKnown = {
   
   andNowFor: 'when there is uncertainty, === is the most obvious signal'
 }
+
+thinkLikeJS

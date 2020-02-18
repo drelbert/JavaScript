@@ -4,7 +4,7 @@
 //In the Spec section 7 https://www.ecma-international.org/ecma-262/9.0/index.html#sec-abstract-operations
 
 
-const theListAbstractOperations = {
+const theListOfAbstractOperations = {
     ToPrimitve,
     toString,
     toNumber,
@@ -18,9 +18,9 @@ const abstractOperations = {
     firstOne: ToPrimitve(hint),
     notAFunction: 'actually conceptual operation and involves a set of algorythmic steps',
     takes: 'an optional type hint, for example if numerical operation, hint will be number type',
-   bigNOTE: 'algorithims in JS are inherently recursive = if no primitive is returned, then it invokes again until one is',
-   twoMethods: 'hint number = valueof() toString() or hint string toString() valueOf()',
-   ifUse: 'math or concatination = the ToPrimitive() algorithym is at play'
+    bigNOTE: 'algorithims in JS are inherently recursive = if no primitive is returned, then it invokes again until one is',
+    twoMethods: 'hint number = valueof() toString() or hint string toString() valueOf()',
+    ifUse: 'math or concatination = the ToPrimitive() algorithym is at play'
 }
 
 const toString = {
@@ -120,7 +120,7 @@ const boxing = {
     
 }
 
-//example 
+//example of boxing 
 if (studentNameElem.value.length > 50) {
     console.log("Name too long!");
 }
@@ -130,7 +130,7 @@ if (studentNameElem.value.length > 50) {
 coercionCornerCase = '' //returns 0
 
 //illustration
-studentsInput.vlaue = '';  //..
+studentsInput.value = '';  //..
 
 Number(studentsInput.value);  //0
 
@@ -143,3 +143,12 @@ Number(true) //1
 Number(false) //0
 
 //see the example of < > chain 
+
+ydkJSyNotes = {
+    converting: 'from one value to another',
+    typeCasting: ' aka type conversion done explicitly',
+    coercion: 'done implicitly forced by how a value is used',
+    alwaysResultsIn: 'scalar primitve -> bool, string, number'
+}
+
+thinkLikeJS = 'so ask: how is the value being used?'
