@@ -5,8 +5,8 @@ scope = 'where to look for things';
 scopeDetails = {
     ask: 'where to look for things 1. what are the identifiers? and 2. what scope does it belong to?',
     varRoles: {
-        receiving: 'or target position, the assignemnt of the value',
-        retrieving: 'or source position, a value from the variable'
+        receiving: 'or target reference/position, the assignemnt of the value',
+        retrieving: 'or source reference/position, a value from the variable'
     },
     JSasCompiledLangauge: 'aka parsed, where a processing step happens prior to execution occuring',
     compilerStages: [
@@ -39,7 +39,7 @@ var teacher = 'Gru';
 
         // Note, teacher is in the target position, receiving an assignment
 
-    // Execution: Engine asks SM -> ever heard of the target reference for teacher? Sure thing, here is a red marble  
+    // Execution: Engine asks SM -> ever heard of the target reference for var teacher? Sure thing, here is a red marble  
 
     // In execution, the next two declarations have been compiled away
 function otherClass() {  
@@ -80,6 +80,7 @@ ask();
 
 bigNote = "All lexical scopes are determined at compile time"
 
+<<<<<<< HEAD
 
 
 compilationReview
@@ -151,3 +152,10 @@ conversationAbove = 'will be the same'
 but = 'when Engine inquires about it, ultimatly the Global scope will respond with a ReferenceError'
 reason = 'the variable cannot be found'
 
+=======
+lexicalScopeReview = {
+    JavaScript: 'two pass processing',
+    first: 'compilation = plan built for all the scopes and all the identifier references are established (as marbles)',
+    second: 'execution = '
+}
+>>>>>>> 119f5f0d4a0643f357cb8fba04716ebec08035aa
