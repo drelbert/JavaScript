@@ -2,7 +2,7 @@
 
 //Basic function expression with parameter
 /*
-const dbl = function(z) {
+const dbl = function SomeName(z) {
     return z * z;
 };
 

@@ -152,10 +152,30 @@ conversationAbove = 'will be the same'
 but = 'when Engine inquires about it, ultimatly the Global scope will respond with a ReferenceError'
 reason = 'the variable cannot be found'
 
-=======
-lexicalScopeReview = {
-    JavaScript: 'two pass processing',
-    first: 'compilation = plan built for all the scopes and all the identifier references are established (as marbles)',
-    second: 'execution = '
+nestedScope = 'buckets inside buckets'
+
+var teacher = "Kyle"  //Red marble
+
+function otherClass() {  //Red marble
+    var teacher = "Sue";    //Blue marble
+
+    function ask(question) {    //Blue marble
+        console.log(teacher, question);   //techer is blue marble, but question is green since its bucket is nested in the blue ask bucket
+    }
+
+    ask("Why?");
 }
->>>>>>> 119f5f0d4a0643f357cb8fba04716ebec08035aa
+
+otherClass();
+ask("???");   //ReferenceError
+
+undefinedAndUndeclared = {
+    undefined: "means = a variable exists, but at the moment it has no value",
+    undeclared: "means = never formally declared, never had a marble, in strict resutls in a ReferenceError"
+}
+
+
+lexicalScopeElevator = {
+    firstFloor: "current scope",
+    topFloor: "global scope"
+}
