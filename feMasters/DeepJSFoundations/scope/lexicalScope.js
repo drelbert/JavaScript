@@ -20,7 +20,7 @@ var aboutLexicalScope = [
          confirmed: true
      },
      {
-         isFixed: "since is built at compile time then it cannot be modified, not dynamic",
+         isFixed: "since its built at compile time then it cannot be modified, not dynamic",
          ruleNumber: 4,
          confirmed: false
      }
