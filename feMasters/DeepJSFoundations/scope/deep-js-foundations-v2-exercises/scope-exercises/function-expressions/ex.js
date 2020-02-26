@@ -10,8 +10,8 @@ function getStudentById(studentId) {
 function printRecords(recordIds) {
 	var records = recordIds.map(getStudentById) // The mapper function using the utility above
 
-	records.sort(function sortByNameAcs(record1, record2){
-		if (record.name < record2.name) {
+	records.sort(function sortByNameAcs(record1, record2){  // the sort function is a mutator
+		if (record1.name < record2.name) {  // no coercion, but alpha numeric comparison
 			return -1;
 		}
 		else if (record1.name > record2.name) {

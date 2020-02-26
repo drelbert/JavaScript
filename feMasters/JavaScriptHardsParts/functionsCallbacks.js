@@ -12,17 +12,27 @@ JavaScriptPlatform = {
 
 
 generalizedFunctions
-
+// requirement sqaure 10
 function isADeclaration () {
     return 10 * 10;
 }
 
 isADeclaration();
 
-//Let's convert this function to make it reuseable
+// requirement sqaure 9, have to rewrite the above function 
+// breaks the DRY principle 
+function isADeclaration () {
+    return 9 * 9;
 
-function squareNum(num){
-    return num * num;
+}
+
+isADeclaration();
+
+
+//Let's generalize this function to make it reuseable
+
+function squareNum(param){  // 
+    return param * param;
 }
 
 squareNum(10);
@@ -34,17 +44,59 @@ parameterIs = "placeholder to delay defining the data to use until we need to ru
 and 
 argument = "is the actual value that gets provided when the function is run"
 
-higherOrderFunctions = "pass in a function as a parameter"
+exampleOfNotDryCode = "Would have to rewrite function if the requirement changed"
+
+function copyArrayAndMultiplyBy2(array) {  // in global memory
+    const output = [];
+    for (let i = 0; i < array.length; i++) {
+        output.push(array[i] * 2);
+    }
+    return output;
+}
+
+const myArray = [1, 2, 3];  // in global memory
+const result = copyArrayAndMultiplyBy2(myArray);  // in global memory
+
+theSolutionToRewritingFunctions = "and avoiding the DRY, pass in a function as a parameter"
+
+higherOrderFunctions 
+
+purpose = "pass in a function as a parameter"
 
 example 
 
-function copyAndManipulateArray(array, instructions) {
+function copyArrayAndManipulate(array, instructions) {
     const output = [];
     for (let i = 0; i < array.length; i++) {
         output.push(instructions(array[i]));
     }
     return output;
 }
-function multiplyBy2(input) { return input + 2 }
-const result = copyAndManipulateArray([1, 2, 3], multiplyBy2);
+function multiplyBy2(input) { return input * 2; }
+
+const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
+
+// has these components
+globalMemory = [
+    'copyArrayAndManipulate', 
+    'multiplyBy2',
+    'const result'
+];
+
+executionContext =  [   // copyArrayAndManipulate 
+    'localMemory' = [
+        'array :[1, 2, 3',
+        'instructions: multiplyBy2',
+        'output: [1, 2, 3] which is a copy not the original'
+    ]
+]
+
+callStack = [
+    'copyArrayAndManipulate',
+    'global'
+]
+
+
+
+callbacksAndHigherOrderFunctions
 

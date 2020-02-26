@@ -1,5 +1,6 @@
 function thisIsAFunctionDeclaration() {
-    var rule = 'These attach their marble(identifier) to their enclosing scope'
+    var rule = 'These attach their marble(identifier) to their enclosing scope';
+    var rule2 = 'function expression always starts with the keyword: function'
 }
 
 
@@ -14,9 +15,10 @@ namedFunctionExpression = "function expression that has been given a name"
 
 var clickHandler = function() {
     // anonymous and not recommended
+    // these often get used as callbacks passed inline to other functions .map, .then etc
 };
 
-var keyHandler = function keyHandler(){
+var buttonHandler = function buttonHandler(){
     // named function expression
 }
 
@@ -34,7 +36,7 @@ arrowFunctions = "added in ES6"
 about = {
     anonymous: "arrow functions do not have names",
     mainPurpose: "not to write less code, but ",
-    conerSaces: "15 plus corner cases"
+    cornerCaces: "15 plus corner cases"
 }
 
 illutration 
