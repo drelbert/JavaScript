@@ -6,7 +6,7 @@ function thisIsAFunctionDeclaration() {
 
 functionExpressions
 
-var functExp = function thisIsAFunctionExpression() {
+var functExp = function thisIsAFunctionExpression() { 
     var rule = "Add their marble(identifier) to their own scope"
     console.log(thisIsAFunctionExpression);
 };
@@ -34,8 +34,8 @@ reasons = {
 arrowFunctions = "added in ES6"
 
 about = {
-    anonymous: "arrow functions do not have names",
-    mainPurpose: "not to write less code, but ",
+    anonymous: "arrow functions do not have names = they are anonymous",
+    mainPurpose: "designed to TODO, while writing less code is not the primary reason ",
     cornerCaces: "15 plus corner cases"
 }
 

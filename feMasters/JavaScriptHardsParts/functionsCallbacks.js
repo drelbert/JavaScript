@@ -74,7 +74,7 @@ function copyArrayAndManipulate(array, instructions) {
 }
 function multiplyBy2(input) { return input * 2; }
 
-const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);
+const result = copyArrayAndManipulate([1, 2, 3], multiplyBy2);  // setting up a variable : with type object(function) with two arguments to use in the function 
 
 // has these components
 globalMemory = [
@@ -99,4 +99,19 @@ callStack = [
 
 
 callbacksAndHigherOrderFunctions
+
+higherOrderFunction = {
+    is: 'a function that takes in a function or returns one out',
+    exampleFromAbove: 'copyArrayAndManipulate'
+}
+
+callback = {
+    is: 'the functin that is inserted',
+    exampleFromAbove: 'multiplyBy2'
+}
+
+theseAllowFor = 'Declarative style'
+
+
+arrowFunctions 
 

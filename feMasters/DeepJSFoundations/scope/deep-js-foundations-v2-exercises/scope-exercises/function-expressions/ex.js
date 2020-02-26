@@ -1,15 +1,14 @@
 // Utility function to access student record by id
 function getStudentById(studentId) {
-	return studentRecords.find(function matchId(record) {  // The find() function takes a callback 'function matchId(record)' invoked for each element in array 
-		// When the first of those returns true, then the value from the array is returned
-		return (record.id == studentId); 
-	}) 
-};
+	return studentRecords.find(function matchId(record){ // The find() function takes a callback 'function matchId(record)' invoked for each element in array 
+		return (record.id == studentId);  	// When the first of those returns true, then the value from the array is returned
+	})
+}
 
 // Turn record.ids into a list of student records
 function printRecords(recordIds) {
 	var records = recordIds.map(getStudentById) // The mapper function using the utility above
-
+	// Creating a function callback with name sortByNameAsc
 	records.sort(function sortByNameAcs(record1, record2){  // the sort function is a mutator
 		if (record1.name < record2.name) {  // no coercion, but alpha numeric comparison
 			return -1;
@@ -31,7 +30,7 @@ function printRecords(recordIds) {
 
 
 function paidStudentsToEnroll() {
-	// TODO
+
 }
 
 function remindUnpaid(recordIds) {
