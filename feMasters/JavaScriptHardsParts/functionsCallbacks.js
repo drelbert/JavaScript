@@ -59,6 +59,8 @@ const result = copyArrayAndMultiplyBy2(myArray);  // in global memory
 
 theSolutionToRewritingFunctions = "and avoiding the DRY, pass in a function as a parameter"
 
+
+
 higherOrderFunctions 
 
 purpose = "pass in a function as a parameter"
@@ -114,4 +116,17 @@ theseAllowFor = 'Declarative style'
 
 
 arrowFunctions 
+// taking the function multiplyBy2 and using the arrow function
+function multiplyBy2(input) {
+    return input * 2;
+}
+// modified to use an => 
+const multiplyBy2 = (input) => { return input*2 }
 
+
+
+pairProgramming 
+
+point = "researcher hits hard block and just researches, while the stackoverflower just relies blndly on SO"
+
+resolveHittingABlock = "use debugger or console.log to reveal the issue with a block of code"

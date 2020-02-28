@@ -1,4 +1,5 @@
 // Utility function to access student record by id
+// This is a standalone function that can be used multiple times below
 function getStudentById(studentId) {
 	return studentRecords.find(function matchId(record){ // The find() function takes a callback 'function matchId(record)' invoked for each element in array 
 		return (record.id == studentId);  	// When the first of those returns true, then the value from the array is returned
@@ -30,11 +31,30 @@ function printRecords(recordIds) {
 
 
 function paidStudentsToEnroll() {
+	// get by setting idsToEnroll as studentRecords to allow for filter()
+	var idsToEnroll = studentRecords.filter(function needsToEnroll(record){
+		return (record.paid && !currentEnrollment.includes(record.id))
+	})
+	// while the record is returned, actually just need the id so use .map()
+	.map(function getStudentById(record){
+		return record.id;
+	});
 
+	// return and spread
+	return [ ...currentEnrollment, ...idsToEnroll];
 }
 
 function remindUnpaid(recordIds) {
-	// TODO
+	// take a list of student ids
+	var  unpaidIds = recordIds.filter(function isUnpaid(studentId){
+		 // get the record
+		 var record = getStudentById(studentId);
+		 	// filter the list of student ids on unpaid status
+			 return !record.paid;
+	});
+
+	//pass the filtered list to printRecords() to print the unpaid reminders
+	printRecords(unpaidIds);
 }
 
 
