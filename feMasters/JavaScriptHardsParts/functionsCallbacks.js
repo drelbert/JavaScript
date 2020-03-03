@@ -87,7 +87,7 @@ globalMemory = [
 
 executionContext =  [   // copyArrayAndManipulate 
     'localMemory' = [
-        'array :[1, 2, 3',
+        'array :[1, 2, 3]',
         'instructions: multiplyBy2',
         'output: [1, 2, 3] which is a copy not the original'
     ]
@@ -130,3 +130,8 @@ pairProgramming
 point = "researcher hits hard block and just researches, while the stackoverflower just relies blndly on SO"
 
 resolveHittingABlock = "use debugger or console.log to reveal the issue with a block of code"
+
+link = "http://csbin.io/callbacks"
+
+
+

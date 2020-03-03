@@ -74,24 +74,26 @@ const ifElse = {
 
 }
 
-//simply if 
-var age = 30;
 
-if (age >= 18) {
+ifStatements = "decisions with if statements"
+//simply if 
+var age = 30;  // assignment statement 
+
+if (age >= 18) {  // if or test clause only does work is get true back
     regForDraft();
 }
 
 
-//if else 
+// if else allows for branching where true else false are possible
 if (hasData()) {    //the test clause returns boolean
-    shareInsights();  //run this if true
+    shareInsights();  //function call to run if true
 }
 else {      //only executes if the test clause returns false
     talkToHumans();
 }
 
 
-//if else with boolean variable 
+// example illustrating the above, if else with boolean variable 
 let hasCoffee = true;
 if (hasCoffee) {
     console.log('Work on');
@@ -104,19 +106,23 @@ else {
 
 
 
-const loops = {
-    for: 'repeating something',
-    forms: 'while, for, for...of, and others'
-}
+loops  = "for repeating operation over and over "
 
 //examples 
-var students = [ 754, 'Mike', 'Loco', 'B805'];
+var students = ['Mike', 'Loco', 'B805'];
 
+// this is a for loop that counts 
 for (let i = 0; i < students.length; i++){
     //greetStudent( students[i] );
-    console.log( students[i] );  //returns list 
+    greetStudent( students[i] );  //returns list 
 }
 
+// this is a for of loop that goes over a list of values and returns all values = iterator 
+for  (let student of students) {
+    greetStudent( student );
+}
+
+// this is a while loop similar to the for, but evaluating true or false 
 while (students.length > 0) {
     let student = students.pop();
     console.log(`Hi, ${student}.`); //returns message and names 
@@ -124,13 +130,11 @@ while (students.length > 0) {
 }
 
 
-const functions = {
-    do: 'some action in places in code',
-    are: 'collection of things we need done = procedure',
-    note: 'use interpolated string `` for putting variables',
-    understand: 'that no value is given back, rather just performing an action',
-    asOpposedTo: 'functional programming that computes and returns values'
-}
+functions = [
+    "collection of statemnets to be run at diff times",
+    "group info into function: procedure",
+    "collection of things we want it to do"
+]
 
 //example function declaration 
 //note, no value is returned
@@ -142,19 +146,19 @@ function greetUser(user) {
 
 //functional expression 
 //note, returns a value
-function timeRemains(timeE, endT) {
-    return endT - timeE;
+function timeDiff(first, elapsed){
+    return (first - elapsed)/ 2;
 }
 
-let have = timeRemains(42, 140);
+var result = timeDiff(100, 50);
 
-have;  //value
+console.log(result); // 25
 
 
 
 //3 Pillars Section 
 
-//Pillar 1 = Types and Coercion
+pillarOne = "Types and Coercion"
 
 const typesCoercion = {
     first: 'primitive types',

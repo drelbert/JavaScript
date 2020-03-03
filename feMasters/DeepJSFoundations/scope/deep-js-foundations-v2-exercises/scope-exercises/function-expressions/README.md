@@ -13,8 +13,11 @@ You are provided three functions stubs -- `printRecords(..)`, `paidStudentsToEnr
 At the bottom of the file you will see these functions called, and a code comment indicating what the console output should be.
 
 1. `printRecords(..)` should:
+	these first two outline the need for a utility
 	- take a list of student Ids
 	- retrieve each student record by its student Id (hint: array `find(..)`)
+	
+	these next two are a decision and operation
 	- sort by student name, ascending (hint: array `sort(..)`)
 	- print each record to the console, including `name`, `id`, and `"Paid"` or `"Not Paid"` based on their paid status
 

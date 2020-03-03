@@ -8,8 +8,15 @@ functionExpressions
 
 var functExp = function thisIsAFunctionExpression() { 
     var rule = "Add their marble(identifier) to their own scope"
+    // Meaning that 'thisIsAFunctionExpression' is not available in the global scope
     console.log(thisIsAFunctionExpression);
 };
+
+console.log(functExp);  // Works
+console.log(thisIsAFunctionExpression);  // Returns ReferenceError
+
+
+
 
 namedFunctionExpression = "function expression that has been given a name"
 
