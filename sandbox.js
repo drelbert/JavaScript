@@ -1,8 +1,9 @@
-var teacher = "Ky";
+var teacher = "K";
 
-{
-    let teacher = "Gane";
+var myTeacher = function() {
     console.log(teacher);
-}
+};
 
-console.log(teacher);
+teacher = "S-Juan";
+
+myTeacher();

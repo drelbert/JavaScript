@@ -80,7 +80,6 @@ ask();
 
 bigNote = "All lexical scopes are determined at compile time"
 
-<<<<<<< HEAD
 
 
 compilationReview

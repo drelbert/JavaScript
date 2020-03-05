@@ -52,7 +52,7 @@ console.log(teacher);
 blockScoping
 
 
-asAn = "alternative ot the IIFE ( function ... ) above"
+asAn = "alternative to the IIFE ( function ... ) above"
 
 var teacher = "Ky";
 
@@ -73,6 +73,8 @@ howBlockScopeFits = {
     letUse: "to signal the presence of a block",
     useOnly: "where it already makes sence to block scope (maybe where var is already)"
 };
+
+useLet = "To block scope"
 
 // Let use example 
 function diff(x, y) {
@@ -95,3 +97,41 @@ function repeat(fn, n) {
     }
     return result;
 }
+
+useVar = "where making scope dis-ambiguous is needed"
+
+
+explicitBlockScope = "go ahead and create a block scope to contain the let"
+
+constDiscussion = "const over let, but const does not carry its own weight"
+
+detailsConst = {
+    point: "some are confused that const means a thing that does not change",
+    reality: "const was desigined to hold a var that cannot change",
+    use: "use in small blocks",
+    constSays: "for the rest of this block, there will be no reassignemnt",
+    use: "when assigning a value that is already a primitive immutable values: string, number, boolean.  Use as sematic placeholder for literals"
+}
+
+// Examples
+const myTeacher = teacher;
+myTeacher = "Juan";  // TypeError
+
+const teachers = ["Kri", "Sue"];
+teachers[1] = "Steve";    // Allowed
+
+
+hoisting
+
+notAThing = "metaphor to discuss the idea of lexical scope, without getting detailed about it";
+usedFor = "describing the parse and execute phase without getting into the details";
+
+// Illustration 
+student;
+teacher;
+var student = "value";
+var teacher = "coolValue";
+
+debunking = "let does not hoist"
+
+seeSpec = "13.3.1"

@@ -49,7 +49,15 @@ function createFunction() {  // createFunction = global memory
 }
 
 var generatedFunc = createFunction();  // generatedFunc in global 
+bigNOTE = "generatedFunc and createFunction() are not related as the = indicates, but rather the result of the one time running of createFunction()"
+
 var result = generatedFunc(3);   // result in global 
+
+
 
 thisIsValuableFor = "saving a function inside another function = the returned function gets the most powerful property in JavaScript ->    "
 
+
+nestedFunctionScope 
+
+isAbout = "Calling a function in the same function call as it was defined"

@@ -260,7 +260,7 @@ const equality = 'ask: is coercion allowed?'
 
 
 //Function expressions
-const functionExpression ={
+const functionExpression = {
     is: 'function defined as a value somewhere',
     makeUp: 'values that are assigned and passed as arguments',
     firstClass: true,
