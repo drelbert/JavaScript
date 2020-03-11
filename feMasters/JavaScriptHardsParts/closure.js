@@ -61,3 +61,51 @@ thisIsValuableFor = "saving a function inside another function = the returned fu
 nestedFunctionScope 
 
 isAbout = "Calling a function in the same function call as it was defined"
+
+locationOfFunction = "Where the function is defined, dtermines what data it has access to when called"
+
+// illustration 
+function outer (){
+    let counter = 0;
+    function incrementCounter (){
+        counter ++;
+    }
+    incrementCounter();
+}
+
+outer();
+
+// walkthrough
+globalMemory = {
+    outer: "function"
+}
+
+executionContext = {
+    outer: {
+        localMemory: "outer and incrementCoutner as a function"
+    },
+    incrementCounter: "with nothing in local memory and coutner++ in the running section"
+}
+
+callStack = [
+    "incrementCounter",
+    "outer",
+    "global() is bottom"
+]
+
+returningFunctionMemory = "see diagram on paper"
+
+
+functionClosure 
+
+
+
+closureTechnicalDefinition
+see = "https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8"
+
+backpackCalled = [
+    "COVE = closed over variable environment",
+    "PLSRD = persistent lexical scope referenced data",
+    "Bakcpack",
+    "Closure"
+]
