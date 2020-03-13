@@ -5,15 +5,35 @@ const thePrimer = {
 }
 
 const values = {
+    is: "most basic unit of information -> data that allows program to maintain state",
+    twoTypes: "primitive and object",
+    primitives: 
+    {
     numbers: 4,
     strings: 'el cubano',
     booleans: true,  //or false 
     empty: 'null, undefined', // two different empty values 
     array: [1, 3, 6],
-    object: {
-        name: 'SixKiller'
+    null: "represents emptyness",
+    undefined: "represents empty value"
+    },
+    objects: {
+        arrays: ["string", "Karn", "Jose"]
     }
 }
+
+
+interpolation 
+
+var launcher = "Sonja";
+
+function thisIsInterpolation(){
+    return`Launch missles ${ launcher }!`;
+}
+console.log(`Launch missles ${ launcher }!`);
+//Launch missles Sonja!
+
+
 
 const operators = {
     have: 'opperand = the thing that gets the action',
@@ -132,11 +152,11 @@ while (students.length > 0) {
 
 functions = [
     "collection of statemnets to be run at diff times",
-    "group info into function: procedure",
+    "collection of statements to be invoked one or more times = procedure",
     "collection of things we want it to do"
 ]
 
-//example function declaration 
+// example function declaration 
 //note, no value is returned
 function greetUser(user) {
     console.log(
@@ -144,9 +164,9 @@ function greetUser(user) {
     );
 }
 
-//functional expression 
+// example functional expression 
 //note, returns a value
-function timeDiff(first, elapsed){
+var ninftyFunc = function timeDiff(first, elapsed){
     return (first - elapsed)/ 2;
 }
 
@@ -154,6 +174,22 @@ var result = timeDiff(100, 50);
 
 console.log(result); // 25
 
+
+// illustrating how functions receive parameters 
+function greeting(elName) {
+    console.log(`Hey some interpolation here ${ elName }!`);
+}
+greeting('Garcia');
+
+
+
+// illustration of function returning values with "return"
+function returnParam(coolParam) {
+    return  `Hey Hey, ${ coolParam }!!!`;
+}
+
+var msg = returnParam("Param Name");
+console.log(msg);
 
 
 //3 Pillars Section 
@@ -238,16 +274,36 @@ const bestPracticePoint = {
     dangerous: 'when reader cannot tell what will happen',
 };
 
-const equality = 'ask: is coercion allowed?'
+
+comparisons 
+
+allAbout = "asking is the value of X the same as the value of Y"
+simply = "type and value"
+
+ equality = 'ask: is coercion allowed?'
     == 'allows coercion (where types are different)'
-    === 'does not allow coercion (where types are the same), so can only use === when types are the same'
-
-    == and === 'will result in true always, when the types are the same'
-
+    == "described as coercive equality"
+    == "first allows type conversions then compares value and type like === does"
     == 'not about comaprisons with unknown types'
     == 'is about comparisons with known types (optionally) where comparisons are helpful'
 
-    const point = 'BE CLEAR about types'
+    === "checks value and type"
+    === 'does not allow coercion, so can only use === when types are the same'
+
+    == and === 'will result in true always, when the types are the same'
+
+
+ point = 'BE CLEAR about types'
+
+
+ organizingInJS 
+ classes
+ modules
+
+ 
+
+
+
 
 
 //Pillar 2 Scope and Closures 

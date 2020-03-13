@@ -64,7 +64,7 @@ var teacher = "Ky";
 console.log(teacher);
 
 aboutBlocks = {
-    are: "lightweight and less sideeffects, no redefining",
+    are: "lightweight and less side effects, no redefining",
     not: "expressions",
     noVar: "let (or const) for making a declaration inside a block, turning the block into a scope"
 };

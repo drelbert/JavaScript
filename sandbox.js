@@ -1,9 +1,7 @@
-var teacher = "K";
+function squareTen(input) {
+    return input*input
+}
 
-var myTeacher = function() {
-    console.log(teacher);
-};
+squareTen(10);
+squareTen(5);
 
-teacher = "S-Juan";
-
-myTeacher();
