@@ -10,7 +10,7 @@ var aboutLexicalScope = [
         confirmed: true
     },
     {
-        content: ' role Of Compiler = figurie out the scopes prior to execution',
+        content: "role Of Compiler = figurie out the scopes prior to execution",
         ruleNumber: 2,
         confirmed: true
     },

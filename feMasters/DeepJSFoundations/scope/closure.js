@@ -58,13 +58,20 @@ myTeacher();  // "S-Juan"
 
 rampUpToModules = "lexical scope > closure > module pattern";
 
+
 modulePattern 
 
-isNot = [
-    "the namespace pattern"
+about = [
+    "is not the namespace pattern",
+    "requires the concept of encasulation(hidding data and behavior)",
+    "modules encasulate data and behavior(methods) together",
+    "the state(data) of a module is held by its methods via CLOSURE!",
+    "no closure = no module",
+    "PURPOSE of module -> track state over time"
 ];
 
-// illustration
+// illustration of object with data and function = namespace pattern -> a primitive data structure
+// point -> all the properties and functions that exist are public
 var workshop = {
     teacher: "Ky",
     ask(question) {
@@ -72,3 +79,57 @@ var workshop = {
     },
 };
 workshop.ask("Is this a module?")  //Ky Is this a module?
+
+// illustration of the module pattern using an IFEE pattern aka singleton
+var workshop = (function Module(teacher){    // The (function pattern means an IFEE
+    var publicAPI = { ask, };
+    return publicAPI;
+
+    //
+    function ask(question) {
+        console.log(teacher, question);
+    }
+})("Kyle");
+
+workshop.ask("This is a module, right?");
+
+// illustration of the module factory, another way to make modules
+// workshop module factory function
+function WorkshopModule(teacher){
+    var publicAPI = { ask, };
+    return publicAPI;
+
+    function ask(question) {
+        console.log(teacher, question);
+    }
+};
+
+var workshop = WorkshopModule("Kyle");
+
+workshop.ask("Module, right?");
+// Kyle Module, right?
+
+
+question = "how to see state in a function?"
+
+ES6ModulePatterns
+
+about = [
+       "node and TC39 missed comms so need a hack to make ES6 module pattern syntax and node modules work together",
+       "this pattern produces only singletons, run once and other instances only ref the original"
+]
+
+// example note the file extension workshop.ejs 
+var teacher = "Hy";
+
+export default function ask(quetion) {
+    console.log(teacher, question);
+};
+
+
+ES6ModuleSyntax 
+
+importingModules = [
+    "one type = named import syntax(more modern approach), to literally import identifiers into scope",
+    "second type = namespace import more traditional"
+]
