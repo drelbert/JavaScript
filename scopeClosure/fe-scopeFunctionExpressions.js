@@ -18,7 +18,9 @@ console.log(thisIsAFunctionExpression);  // Returns ReferenceError
 
 
 
-namedFunctionExpression = "function expression that has been given a name"
+namedFunctionExpression 
+
+are = "function expression that has been given a name"
 
 var clickHandler = function() {
     // anonymous and not recommended

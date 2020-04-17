@@ -1,0 +1,6 @@
+whyGlobalScope
+
+
+
+whereExactlyIsTheGlobal
+

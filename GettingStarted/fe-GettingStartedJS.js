@@ -34,6 +34,7 @@ console.log(`Launch missles ${ launcher }!`);
 //Launch missles Sonja!
 
 
+operators 
 
 const operators = {
     have: 'opperand = the thing that gets the action',
@@ -45,6 +46,7 @@ const operators = {
 }
 
 
+types 
 
 const types = {
     are: 'number, string, bool, array, object, empty(null or undef) symbol',
@@ -54,6 +56,7 @@ const types = {
 }
 
 
+variables
 
 const vars = {
     isA: 'place in memory',
@@ -84,19 +87,18 @@ const expressionAndStatement = {
 }
 
 // expressions  -> statement
-var age = 30;  
+var age = 30;  // an assignment expression
 age = 1 + (age * 2);
 
 
 
-const ifElse = {
-    for: 'making a decision',
+ifAndElse
 
-}
+about = "making decisions"
 
 
 ifStatements = "decisions with if statements"
-//simply if 
+
 var age = 30;  // assignment statement 
 
 if (age >= 18) {  // if or test clause only does work is get true back
@@ -121,58 +123,83 @@ if (hasCoffee) {
 else {
     console.log('Break-time');
 }
-
-// returns 'Work'
-
+// returns 'Work on'
 
 
-loops  = "for repeating operation over and over "
+loops 
 
-//examples 
+used  = "for repeating operation over and over "
+iteratorConsumption = "often are for..of but also ... rest and gather"
+
+iterationLoopStatements = ["for", "do..while", "while", "for..in", "for..of"]
+
+// illustration for..of
 var students = ['Mike', 'Loco', 'B805'];
 
-// this is a for loop that counts 
+
+countingForLoop
+
 for (let i = 0; i < students.length; i++){
-    //greetStudent( students[i] );
-    greetStudent( students[i] );  //returns list 
+    greetStudent( students[i] );  
 }
 
-// this is a for of loop that goes over a list of values and returns all values = iterator 
+
+iteratingOverValues
+
 for  (let student of students) {
     greetStudent( student );
 }
 
-// this is a while loop similar to the for, but evaluating true or false 
+
+iterables 
+are = "a value that can be iterated over"
+dataStructureBasicTypes = ["array", "strings", "maps", "sets", "others"];
+
+
+
+
+whileLoop
+
+used = "for evaluating true or false "
+
+var students = ['Mike', 'Loco', 'B805'];
+
 while (students.length > 0) {
-    let student = students.pop();
+    let student = students.pop();  // .pop removes items from array
     console.log(`Hi, ${student}.`); //returns message and names 
     console.log(students.length);
 }
 
 
-functions = [
+
+functions
+
+
+details = [
     "collection of statemnets to be run at diff times",
     "collection of statements to be invoked one or more times = procedure",
     "collection of things we want it to do"
 ]
 
-// example function declaration 
+functionDeclaration = procedure
 //note, no value is returned
 function greetUser(user) {
     console.log(
-        `Hola, ${user.name};`
+        `Hola, ${user.name};`  // Interpolated string with expression ${}
     );
 }
 
-// example functional expression 
+functionalExpression 
 //note, returns a value
-var ninftyFunc = function timeDiff(first, elapsed){
-    return (first - elapsed)/ 2;
-}
+function timeDiff(first, elapsed){
+    return first - elapsed;
+  }
+  
+  var result = timeDiff(100, 50);
+  
+  console.log(result); // 50
 
-var result = timeDiff(100, 50);
 
-console.log(result); // 25
 
 
 // illustrating how functions receive parameters 
@@ -190,6 +217,8 @@ function returnParam(coolParam) {
 
 var msg = returnParam("Param Name");
 console.log(msg);
+
+
 
 
 //3 Pillars Section 
@@ -277,6 +306,7 @@ const bestPracticePoint = {
 
 comparisons 
 
+basis = "for making decisions requires making comparisons"
 allAbout = "asking is the value of X the same as the value of Y"
 simply = "type and value"
 
@@ -295,58 +325,130 @@ simply = "type and value"
 
  point = 'BE CLEAR about types'
 
+ relationalOperators = {
+     for: "relational comparisons",
+     likeCoerviceEquality: "in that abiding by strict if types match but allow coercion first if ypes are different",
+     are: ["<", ">", "<=", ">="]
+ }
+
+
 
  organizingInJS 
- classes
+
+ isFor = "Organizing data and behavior"
+
+ classes 
+
+ inAProgram = "defines a type of custom data structure which has data and behavior to operate on the data"
+ toGet = "the class must be instantiated with the new keyword"
+
+
  modules
 
- 
+ isAbout = "grouping data and behavior into logical units and include or access data and behaviors of other modules"
+
+ var properties = {
+     one: "outer function that runs at least once and returns an instance of the module with one or more functions exposed that operates on the module instances hidden data",
+     encapsulate: "modules encapsulate data and behavior (methods) together and the state (data) of a module is held by its methods via closure",
+     purpose: "track state over time"
+ }
 
 
 
 
 
-//Pillar 2 Scope and Closures 
-//Scope 
-    //where to look for things 
+pillarTwo = "Scope and Closures"
 
-//Undefined and undeclared in scope
-//undefined is var that has been declared but now with no value 
-//undeclared is one that has never declared 
+scope
+
+about = "where the JS looks for things" 
+
+//consider 
+var teacher = "TD";
+
+function otherClass() {
+    teacher = "Del Torro"; // scope defines that the variable is reset to Del Torro
+    topic = "React";  // created in the same global scope but in an undeclared state (is this the hoisting metaphor???)
+    console.log("Welcome");
+}
+otherClass();
+
+teacher;  // Del Torro... note the override of "TD"
+topic;  // React 
 
 
-//Function expressions
-const functionExpression = {
-    is: 'function defined as a value somewhere',
-    makeUp: 'values that are assigned and passed as arguments',
-    firstClass: true,
-    clickHandler = function(){
+    
+undefinedVUndeclared
+
+concept = "of emptyness"
+
+undefined = "a variable that has been declared but has no value";
+
+undeclared = "a variable that has never been declared";
+
+
+
+functionExpressions
+
+var functionExpression = {
+    is: 'function assigned as a value somewhere',
+    makeUp: 'values that are assigned and passed as arguments or returned',
+    firstClass: true
+}
+
+
+// Consider
+var clickHandler = function(){
         //no name but assinged to function clickHandler
         //called an anonymous function expression
     },
-    keyHandler = function keyHandler() {
+    
+var keyHandler = function keyHandler() {
         //assigned and with a name keyHandler
         //called a named function expression
     }
-}
 
-//IIFE 
+pointAboutAnanymous = "wont get a description of what the function does"
+
+// Illustrated thus
+var id = people.map(function getId(person){
+    return person.id;
+});
+
+
+// Example promise chain
+getPerson()
+.then(function getDataFrom(person){
+    return getData(person.id);
+})
+.then(renderData);
+
+
+
+IIFE  
 var user = 'Benites';
 
 ( function anotherUser(){
     let user = 'J-uan';
     console.log(user);  //J-uan
-} )();  //This () is how the IIFE get immedietly executed (invoked)
+} )();  //This () is how the IIFE gets immedietly executed (invoked)
 
 console.log(user); //Benites, not overwritten due to the IFEE!
 
-//The cool thing about using an IFEE is that we get a new block of scope 
-//Good for encapsulation and not polluting the global scope
+ifeeBonus = "about using an IFEE is that we get a new block of scope "
+
+goodFor = "encapsulation and not polluting the global scope"
 
 
-//Block scoping with let 
-//reaplaces the IFEE 
-//snippet above rewritten 
+
+blockScoping
+
+about = [
+   " Block scoping with let ",
+   "  replaces the IFEE ",
+]
+
+// Snippet from above redone 
 var user = 'Benites';
 
 {
@@ -356,13 +458,48 @@ var user = 'Benites';
 
 console.log(user) //Benites
 
-//Closure 
-//is when a function 'remembers' the vars outside of it even if the function is passed elsewhere
+
+varAndLetUsePoint = "allows for narrowly scoping = most hidden as possible"
+useVar = "at the function level as it belongs to the function, to be clear about it belongs to function"
+
+useLet = "only in blocks, to be clear that it beliongs to the block"
 
 
 
-//Pillar 3 this and Prototypes
-//this 
+closure 
+defined = [
+    "is when a function 'remembers' the vars outside of it",
+     "and only closure if the function is passed elsewhere = as an argument callback, return it, or assign it",
+     "basically whenever we treat a function as if its a value"
+]
+
+// Illustrating passing a function as an argument callback
+// waitUp has closure over the question variable 
+function ask(question) {
+    setTimeout(function waitUp() {
+        console.log(question);
+    }, 100);
+}
+
+ask("How long will I wait?");
+
+
+//Illustrating return back a function
+function ask(question) {
+    return function holdQuestions(){
+        console.log(question);
+    };
+}
+
+var myQuestion = ask("What is closure?");
+
+myQuestion(); 
+
+
+
+pillarThree =  "this and Prototypes"
+
+exploringThis
 
 const elThis = {
     references: 'the execution context for that call',
@@ -394,11 +531,8 @@ function otherClass() {
 
 otherClass();
 
-//prototypes 
-//
-
-//class{} ES6
 
 
 
-//GO read connected section in YDKJSY
+
+

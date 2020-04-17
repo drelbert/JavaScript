@@ -1,7 +1,6 @@
-function squareTen(input) {
-    return input*input
+if (false) {
+  function ask() {
+      console.log("This run");
+  }
 }
-
-squareTen(10);
-squareTen(5);
-
+ask();

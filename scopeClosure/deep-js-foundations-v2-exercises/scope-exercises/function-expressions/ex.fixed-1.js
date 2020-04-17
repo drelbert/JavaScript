@@ -4,6 +4,8 @@ function getStudentFromId(studentId) {
 	});
 }
 
+
+
 function printRecords(recordIds) {
 	var records = recordIds.map(getStudentFromId);
 
@@ -17,6 +19,8 @@ function printRecords(recordIds) {
 		console.log(`${record.name} (${record.id}): ${record.paid ? "Paid" : "Not Paid"}`);
 	});
 }
+
+
 
 function paidStudentsToEnroll() {
 	var recordsToEnroll = studentRecords.filter(function needToEnroll(record){

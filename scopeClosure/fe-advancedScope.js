@@ -30,43 +30,81 @@ functionScoping
 
 builtFor = 'establishment of pattern';
 
-principleOfLeastPrivledge = {
-     says: "default to keeping all private and expose the minimum",
-     allowsFor: "avoidance of naming collision",
-     and : "if hidden, then other dev cannot use",
-     third : "core principle = protect the refactoring process"
+// Bad example 
+var teacher = "Jose";
+
+// Mistake -> creating name coliision
+var teacher = "Guadalupe";
+console.log(teacher);  // Overiding the original
+
+console.log(teacher);
+
+// Guadalupe for both is returned
+
+
+// A little better... add a function 
+// Still have a naming collision
+var teacher = "Jose";
+
+function anotherTeacher() {
+    var teacher = "Lupe";
+    console.log(teacher);
 }
+
+anotherTeacher();
+
+console.log(teacher);
+
+
+principleOfLeastPrivledge = {
+    says: "default to keeping all private and expose the minimum",
+    allowsFor: "avoidance of naming collision",
+    and : "if hidden, then other dev cannot use",
+    third : "core principle = protect the refactoring process"
+}
+point = "when variable is exposed, someone will use it = now restricted in ability to refactor"
+
+buildInPrincipleOfLeastPrivledge = [
+    "use scope principles",
+    "take the function and place it inside ()",
+    "hence the IFEE pattern"
+]
+
 
 IIFEPattern 
 
-var teacher = "Ky";
+var teacher = "Jose";
 
-( function anotherTeacher() {
-    var teacher = "Zuzy";
+( function anotherTeacher() {  // Not a function declaration but a function expression, since function is not the first item in the statement  
+    var teacher = "Lupe";
     console.log(teacher);
-} ) ();
+} ) ();  // A function expression that is immediatly invoked with ()
 
 console.log(teacher);
 
 
 blockScoping
-
+using = " the {} not the () as above"
 
 asAn = "alternative to the IIFE ( function ... ) above"
 
-var teacher = "Ky";
+
+// Example using the function above now block scoped
+var teacher = "Jose";
 
 {
-    let teacher = "Gane";
-    console.log(teacher);
+    let teacher = "Lupe";
+    console.log(teacher);  // Lupe
 }
 
-console.log(teacher);
+console.log(teacher); // Jose
+
 
 aboutBlocks = {
     are: "lightweight and less side effects, no redefining",
     not: "expressions",
-    noVar: "let (or const) for making a declaration inside a block, turning the block into a scope"
+    noVar: "use let (or const) for making a declaration inside a block, turning the block into a scope",
+    mustUse: "let or const in order to convert block to scope"
 };
 
 howBlockScopeFits = {
@@ -74,17 +112,17 @@ howBlockScopeFits = {
     useOnly: "where it already makes sence to block scope (maybe where var is already)"
 };
 
-useLet = "To block scope"
 
 // Let use example 
 function diff(x, y) {
-    if ( x > y ){
-        let temp = x;
+    if ( x > y ) {
+        let temp = x;  // Correct use of let inside block scope
         x = y;
-        y = temo;
+        y = temp;
     }
     return y - x;
 }
+
 
 choosingLetOrVar
 
@@ -100,8 +138,12 @@ function repeat(fn, n) {
 
 useVar = "where making scope dis-ambiguous is needed"
 
+useLet = "to block scope and indicate a lovalized use of the variable"
 
 explicitBlockScope = "go ahead and create a block scope to contain the let"
+
+
+constSection 
 
 constDiscussion = "const over let, but const does not carry its own weight"
 
@@ -127,11 +169,24 @@ notAThing = "metaphor to discuss the idea of lexical scope, without getting deta
 usedFor = "describing the parse and execute phase without getting into the details";
 
 // Illustration 
+firstPass = "compiler"
+secondPass = "execution"
+findingVarDeclarations = "parsing"
+
 student;
 teacher;
 var student = "value";
 var teacher = "coolValue";
 
+
+letDoesNotHoist
+
 debunking = "let does not hoist"
 
+rule = "let and const only hoist to a block, var hoists to a function"
+
+whenScopeStarts = [
+    "var initializes to undefined",
+    "let and const do create location but state is uninitialized until the block where they exist is run"
+]
 seeSpec = "13.3.1"

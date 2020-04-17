@@ -40,9 +40,11 @@ remindUnpaid(currentEnrollment);
 // ********************************
 
 function getStudentFromId(studentId) {
-	return studentRecords.find(function matchId(record){
+	return studentRecords.find(matchId);
+
+	function matchId(record){
 		return (record.id == studentId);
-	});
+	}
 }
 
 function printRecords(recordIds) {
