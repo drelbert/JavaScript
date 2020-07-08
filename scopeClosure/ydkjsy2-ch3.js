@@ -9,7 +9,8 @@ scopeChainControl = "manages variable access, directionally, oriented upward and
 
 newScope = "has a clean slate/space to hold its own set of variables"
 
-shadowing = "occurs if a variable name is repeates at various levels of the scope chain, limiting access to the outer var from that point inward"
+shadowing = "occurs if a variable name is repeated at various levels of the scope chain, limiting access to the outer var from that point inward"
+
 
 
 functionNameScope 
@@ -23,8 +24,7 @@ function askQuestin() {
 }
 
 // Creation of a function expression
-// is a function declaration 
-// for illustration sake is in the global scope 
+// is a function declaration for illustration sake is in the global scope 
 // used as a value not a standalone declaration
 // function expressions do not hoist
 
@@ -36,3 +36,12 @@ function askQuestin() {
 var askQuestion = function ofInstructor() {
     // ..
 }
+
+
+closureScopeChainFromMDN
+
+everyClosureHas3Scopes = [
+    "local scope (its own scope)",
+    "outer functions scope",
+    "global scope"
+]

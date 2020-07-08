@@ -28,7 +28,11 @@ hoistingAnotherMetaphor
 
 hoistingAssertion = "That hoisting refers to the compile-time operation(task) of generating runtime instructions to auto register variables at the beginning of its scope"
 
-hoistingReally = "just a metaphor for how JS handles variable declarations during compilation"
+hoistingReally = [
+    "just a metaphor for how JS handles variable declarations during compilation",
+    "use it as a reference to compile-time operations",
+    "rather than a runtoime behavior, it has its place in the compile-time task list"
+]
 
 
 reDeclaration
@@ -52,7 +56,11 @@ constants
 rules = [
 "A const requires that the variable be initialized",
 "create variables that cannot be re-assigned"
-]
+];
+
+note = "value immutability is not the same as assignment immutability"
+
+
 
 const empty;  // SyntaxError
 
@@ -85,11 +93,20 @@ rule = "var declarations the variable is hoisted to the top of scope and auto in
 
 and = "let and const do not fall into this rule"
 
-// Consider 
-console.log(name);
-// ReferenceError
+
+// first var
+console.log(name);  // initializing name at the top of scope
+
+var name = "Ingrid"
+// undefined -> this is returned so the var can be used thruought the entire scope
+
+// next let 
+console.log(name);  // name is not initialized = cannot be used
 
 let name = "Dag"
+// ReferenceError
+
+
 
 whyTheError = "its not been initialized, so it cannot be used yet"
 
@@ -103,6 +120,10 @@ console.log(name);  // Trine
 
 noteThis = "compiler removes the var, let, const declarations replacing them with the instructions at the top of each scope thus registering the correct identifiers"
 
-TDZ = "period of time from the entering of a scope to the autp-initializations of the variable occurs"
+TDZ = "period of time from the entering of a scope to the auto-initializations of the variable occurs"
 
-letConst = "only have an observable TDZ"
+letAndConst = [
+    "only have an observable TDZ",
+    "declarations do not auto initialize at the start of scope",
+    "practice point, place both at the top of scope to minimize TDZ window"
+]

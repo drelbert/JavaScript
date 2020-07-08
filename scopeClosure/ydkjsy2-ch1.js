@@ -27,6 +27,13 @@ compilerTheory = [
 ]
 
 
+vocabNote 
+var a = 2
+// this is a variable declaration
+// child node identifier value of a 
+// AssignmentExpression is a NumericLiteral value of 2
+
+
 requiredTwoPhases
 
 parsingCompilation
@@ -40,18 +47,22 @@ execution
 compilerSpeak 
 
 rolesOfVariables = [
+    "targets are about assignemnt",
     "variable is a target of an assignemnt"
     ["where there is a value being assigned to it"],
 
     "variable is source of a value",
-    ["otherwise its a source as there is no value being assigned"]
+    ["otherwise its a source as there is no value being assigned"],
+
+    "note = for the JS engine to handle the variables it first must label them as target or source"
 ];
 
-targets 
 
-and 
 
-sources 
+question = "how is a variable a target or source?"
+
+response = "see code comments in program below" 
+ 
 
 var students = [  // target assignment operation 
     { id: 14, name: "Kyle" },
@@ -80,3 +91,9 @@ console.log(nextStudent);
 
 lexicalScope 
 
+
+JSScope = "determined at compile time = lexical scope"
+
+keyIdea = "of lexical scope is managed only by the placement of functions, blocks and variable declarations and how they relate to each other"
+
+compilationIsAbout = "creating a map of all the lexical scopes, but not created until runtime"

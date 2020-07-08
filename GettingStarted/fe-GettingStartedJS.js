@@ -63,7 +63,7 @@ const vars = {
     pointerTo: 'address to the place in memory',
     equalSign: '= means assignment as in var name = Title',
     for: 'tracking, managing, fetching',
-    proTip: 'the () is an operator and means function call right after a const',
+    proTip: 'the () is an operator and means function call',
     the: '; = end of the statement',
     operatorsWithVarsOnly: {
         //in this case the variable reasigns a value given an operator
@@ -92,7 +92,7 @@ age = 1 + (age * 2);
 
 
 
-ifAndElse
+ifAndElse = "control flow"
 
 about = "making decisions"
 
@@ -101,7 +101,7 @@ ifStatements = "decisions with if statements"
 
 var age = 30;  // assignment statement 
 
-if (age >= 18) {  // if or test clause only does work is get true back
+if (age >= 18) {  // if or test clause only does work if get true back
     regForDraft();
 }
 
@@ -117,6 +117,7 @@ else {      //only executes if the test clause returns false
 
 // example illustrating the above, if else with boolean variable 
 let hasCoffee = true;
+
 if (hasCoffee) {
     console.log('Work on');
 }
@@ -516,6 +517,8 @@ var workshop = {
     },
 };
 workshop.ask('tell us about implicit binding.');
+
+
 
 //illustration via explicit binding
 function ask(question) {

@@ -131,7 +131,7 @@ thisKeyword
 
 isNot = [
     "refering to the function itself",
-    "points the instance that the method belongs to"
+    "points to the instance that the method belongs to"
 ]
 
 featuresOfFunctions

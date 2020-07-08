@@ -1,23 +1,28 @@
-var currentEnrollment = [ 410, 105, 664, 375 ];
+var deepJS = defineWorkshop();  // Instanciating the workshop = step 4
 
-var studentRecords = [
-	{ id: 313, name: "Frank", paid: true, },
-	{ id: 410, name: "Suzy", paid: true, },
-	{ id: 709, name: "Brian", paid: false, },
-	{ id: 105, name: "Henry", paid: false, },
-	{ id: 502, name: "Mary", paid: true, },
-	{ id: 664, name: "Bob", paid: false, },
-	{ id: 250, name: "Peter", paid: true, },
-	{ id: 375, name: "Sarah", paid: true, },
-	{ id: 867, name: "Greg", paid: false, },
-];
+// Define all records by calling deepJS.addStudent() on each = step
+	(313, "Frank", /*paid=*/true);
+	(410, "Suzy",/*paid=*/true);
+	(709, "Brian", /*paid=*/false);
+	(105, "Henry", /*paid=*/false);
+	(502, "Mary", /*paid=*/true);
+	(664, "Bob", /*paid=*/false);
+	(250, "Peter",/*paid=*/true);
+	(375, "Sarah", /*paid=*/true);
+	(867, "Greg", /*paid=*/false);
 
-printRecords(currentEnrollment);
+deepJS.enrollStudent(410)
+deepJS.enrollStudent(105)
+deepJS.enrollStudent(664)
+deepJS.enrollStudent(375)
+
+
+
+deepJS.printCurrentEnrollment();
 console.log("----");
-currentEnrollment = paidStudentsToEnroll();
-printRecords(currentEnrollment);
+deepJS.enrollPaidStudents();
 console.log("----");
-remindUnpaid(currentEnrollment);
+deepJS.remoindUnpaidStudents();
 
 /*
 	Bob (664): Not Paid
@@ -39,6 +44,47 @@ remindUnpaid(currentEnrollment);
 
 
 // ********************************
+function defineWorkshop() {  // Wrapping all the functions in a module factory = step 1
+
+	// adding data to close over with currentEnrollment and studentRecords = step 3
+	var currentEnrollment = []; 
+	var studentRecords = [];
+
+	var publicAPI = {   // making the public API object = step 2
+		addStudent,
+		enrollStudent,
+		printCurrentEnrollment,
+		enrollPaidStudents,
+		remindUnpaidStudents
+	}; 
+
+	return publicAPI; 
+// ********************************
+
+
+function addStudent(id, name, paid) {
+	studentRecords.push({ id, name, paid});  // push into the student records array, an object that includes id, name, paid
+}
+
+function enrollStudent(id) {
+	if (!currentEnrollment.includes(id)) {  // if check to ensure no duplicates
+		currentEnrollment.push(id);
+	}
+}
+
+function printCurrentEnrollment() {
+	printRecords(currentEnrollment);
+}
+
+function enrollPaidStudents() {
+	currentEnrollment = paidStudentsToEnroll();
+	printRecords(currentEnrollment);
+}
+
+function remindUnpaidStudents() {
+	remindUnpaid = (currentEnrollment)
+}
+
 
 function getStudentFromId(studentId) {
 	return studentRecords.find(matchId);
@@ -93,4 +139,6 @@ function remindUnpaid(recordIds) {
 function notYetPaid(studentId) {
 	var record = getStudentFromId(studentId);
 	return !record.paid;
+}
+
 }
