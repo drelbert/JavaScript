@@ -1,5 +1,3 @@
-import { nominalTypeHack } from "prop-types";
-
 closureIntro;
 
 enables = "pro level functions";
@@ -7,16 +5,18 @@ enables = "pro level functions";
 functionsGetNewMemory = "every run/invocation";
 
 function mult2(inputNumber) {
-  var result = inputNumber * 2;
   // local var with the procedure
-
-  return result;
+  var result = inputNumber * 2;
   // return it
+  return result;
 }
 
 var output = mult2(7);
 
 var outputSecond = mult2(10);
+
+console.log(output);
+console.log(outputSecond);
 
 functionsWithMemories;
 
@@ -46,8 +46,8 @@ function buildFunction() {
   return doMultBy2;
 }
 
-let theBuiltfunc = buildFunction();
-// td define the label firstBuiltFunc with a value: uninitialized -> go off and call buildFunction
+let firstBuiltfunc = buildFunction();
+// td define the label theBuiltFunc with a value: uninitialized -> go off and call buildFunction
 
 // firstBuiltFunc is the new label for the function born as doMultBy2
 // and has its data and functionality in the form of the backpack
@@ -64,7 +64,7 @@ executionContext: firstBuiltFunc = buildFunction();
 localMemory;
 ("doMultBy2: 'F' ");
 
-executionContext: result = theBuiltfunc(3);
+executionContext: result = firstBuiltfunc(3);
 localMemory;
 ("num : 3");
 // 3*2 = 6 returned out to result
@@ -111,7 +111,7 @@ details = [
   "question: how does the function get to grab the surrounding data and return it out?",
   "response: the incrementCounter counter++ gets a hidden property [scope]",
   "the [scope] links to where the surrounding data is stored",
-  "so when the: return incrementCounter is returned out of outer, the hidden property [scope] pulls the data with it",
+  "so when the incrementCounter is returned out of outer, the hidden property [scope] pulls the data with it",
 ];
 
 retainingFunctionMemory;
@@ -227,7 +227,7 @@ closureAllows = [
   "helper function = once -> for once and done specification",
   "memoization =  giving the function persistent memory of previous input/output combinations",
   "iterators and generators using lexical scoping and closure for contemporary patterns",
-  "module pattern -> preserve state throughout app running without poluuting global namespace",
+  "module pattern -> preserve state throughout app running without poluting global namespace",
   "asyncronous JS -> callbacks and promises need closure to persist state in async envio",
 ];
 

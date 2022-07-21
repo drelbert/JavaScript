@@ -22,7 +22,7 @@ let num = 3;
 function multiplyBy2(inputNumber) {
   // td defining a function with a paramter = inputNumber
   let result = inputNumber * 2;
-  return result; // return, finished the function and pops the its off the callstack
+  return result; // return, finished the function and pops off the callstack
 }
 
 let output = multiplyBy2(num);
@@ -76,7 +76,7 @@ function square9() {
 generalizeTheFunction = "to make it more reuseable";
 
 function squareNum(num) {
-  // write it once and resure it with different data
+  // write it once and reuse it with different data
   // use a parameter in this case num
   return num * num;
 }
@@ -131,10 +131,10 @@ dryTheCode = [
 
 higherOrderFunctionExample;
 
-defined = "any higher order function takes in or passes out a fucntion";
+defined = "any higher order function takes in or passes out a function";
 
+// the higher order function
 function copyArrayAndManipulate(array, instructions) {
-  // the higher order function
   // define the function copyArrayAndManipulate and save it in global memory, has two inputs, array and instructions(code)
   let output = [];
 
@@ -143,9 +143,8 @@ function copyArrayAndManipulate(array, instructions) {
   }
   return output;
 }
-
+// the callback function
 function multiplyBy2(input) {
-  // the callback function
   // define the function and save it in global
   return input * 2;
 }

@@ -6,17 +6,18 @@ promises = [
 
 JSExecutingRegularCode;
 
+// declaring a variable num and setting its value to 3 in global
 let num = 3;
-// declaring a variable num and setting its value to 3
 
+// td declaring a function with an parameter
 function mult2(inputNum) {
-  // td declaring a function with an parameter
   let result = inputNum * 2;
   return result;
 }
 
-let output = mult2(num);
 // td define the variable in the global memory with a value to be the result of mult2 and is unitialized
+let output = mult2(num);
+
 let outputTwo = mult2(10);
 
 memory(GlobalState);
@@ -29,7 +30,7 @@ localMemory;
 ("inputNum = 3");
 ("result : 6"); // result of inputNum(3) * 2 = 6
 // thread of execution is occupied with the running of this function
-// it must finish befor moving on
+// it must finish before moving on
 
 executionContext: outputTwo = mult2(10);
 localMemory;
@@ -77,7 +78,10 @@ function printHello() {
   console.log("Hi!");
 }
 
-setTimeout(printHello, 1000); // setTimeout, label for timer in JS
+// the web browser feature setTimeout and in JS its timer
+// this is a method on the window object
+// 2 arguments (are others) function and duration value
+setTimeout(printHello, 1000);
 
 console.log("Me First");
 
@@ -104,8 +108,10 @@ function printHi() {
 
 function blockFor1Sec() {
   // the body of this function could be a for loop
+  // would be the blocking function
 }
 
+// setTimeout method with arguemnts: 1. callback 2. duration value
 setTimeout(printHi, 0);
 
 blockFor1Sec();
@@ -113,7 +119,7 @@ blockFor1Sec();
 console.log("Me first");
 
 callbackQueueAndEventLoop;
-//using above functions
+//using above fcode
 
 memory(GlobalState);
 printHi: "F";
@@ -135,10 +141,11 @@ executionContext: console.log("Me First");
 // a queue for items that are ready to run
 // after console.log runs, at 1002 ms goes to the callstack then is popped
 
-webBrowserFeatures: timer: callbackQueue: printHi: eventLoop = [
+theEventLoop = [
   "the feature that checks what runs looking into the callback queue and the call stack",
-  "it first checks the call stack for any code, moving on only if there is nothing to run",
+  "it first checks the call stack for any code, runs that first, moving on only if there is nothing to run",
   "then goes to the callback que",
+  "for example, printHi is on the callback queue",
 ];
 
 challenges;

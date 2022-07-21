@@ -29,9 +29,8 @@ webBrowser = {
 };
 
 promisesExample;
-
+//  declaring a function display and store it in global memory
 function display(data) {
-  //  declaring a function display and store it in global memory
   console.log(data);
 }
 

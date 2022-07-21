@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock and Event Handler!</title>
+
+    <style>
+      #clock {
+        font: bold 24px sans-serif;
+        background: #ddf;
+        padding: 15px;
+        border: solid black 2px;
+        border-radius: 10px;
+      }
+      #response {
+        font: 24px sans-serif;
+        text-decoration-color: navy;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Digital Clock</h1>
+    <span id="clock"></span>
+
+    <h1>Events!</h1>
+    <h3>Registering Handlers: view results in console also.</h3>
+    <button id="buttonelement">Click</button>
+    <h4 id="response"></h4>
+
+    <script>
+      // function to display current time
+      function displayTime() {
+        let clock = document.querySelector("#clock");
+        // get curent time
+        let now = new Date();
+        // display current time in the clock
+        clock.textContent = now.toLocaleTimeString();
+      }
+      // invoke to display
+      displayTime();
+      // update each second
+      setInterval(displayTime, 1000);
+
+      // code to respond to click event
+
+      let button = document.querySelector("#buttonelement");
+
+      let response = document.querySelector("#response");
+
+      function displayResponse() {
+        response.textContent = "Thank you!";
+        console.log("Thanks for the click!");
+      }
+
+      button.addEventListener("click", displayResponse);
+
+      button.addEventListener("click", () => console.log("Thanks again!"));
+    </script>
+  </body>
+</html>
